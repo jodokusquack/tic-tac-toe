@@ -7,7 +7,7 @@ class Game
     @board = Board.new
     @board.draw()
     @players = [Player.new("X"), Player.new("O")]
-    puts("Game is starting.\n ")
+    puts("A new game has started.\n ")
   end
 
   def play()

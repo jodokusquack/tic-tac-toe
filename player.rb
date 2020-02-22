@@ -8,7 +8,7 @@ class Player
 
   def set_move()
     begin
-      puts("Player #{@sign}, where do you want to make your move? row:col")
+      puts("Player #{@sign}, where do you want to make your move? [row:col]")
       input = gets.chomp()
       if input[0].capitalize == "Q"
         abort("You quit the program") 

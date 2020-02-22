@@ -12,17 +12,19 @@ class Board
     ]  
   end
 
+  # draw() draws the board in its current state
   def draw()
     # clear the screen before each drawing step
     system "clear"
 
-    cells.each do |row|
-      row.each do |cell|
-        cell.draw()
-        print "|"
-      end
-      puts "\n------------"
-    end
+    puts("    "+"1".bold+"   "+"2".bold+"   "+"3".bold)
+    puts
+    puts(" "+"1".bold+"  "+ @cells[0][0].content + " | " + @cells[0][1].content + " | " + @cells[0][2].content)
+    puts "   ------------"
+    puts(" "+"2".bold+"  "+ @cells[1][0].content + " | " + @cells[1][1].content + " | " + @cells[1][2].content)
+    puts "   ------------"
+    puts(" "+"3".bold+"  "+ @cells[2][0].content + " | " + @cells[2][1].content + " | " + @cells[2][2].content)
+    puts
   end
 
   def draw_move(sign, row, col)
@@ -52,5 +54,15 @@ class Board
     diag1 = (@cells[0][0] == @cells[1][1] and @cells[1][1] == @cells[2][2])
     diag2 = (@cells[0][2] == @cells[1][1] and @cells[1][1] == @cells[2][0])
     return (diag1 or diag2)
+  end
+end
+
+# define some formatting functions
+class String
+  def underline()
+    return "\e[4m#{self}\e[0m"
+  end
+  def bold()
+    return "\e[1m#{self}\e[0m"
   end
 end
