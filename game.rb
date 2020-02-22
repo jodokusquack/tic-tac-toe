@@ -7,7 +7,7 @@ class Game
     @board = Board.new
     @board.draw()
     @players = [Player.new("X"), Player.new("O")]
-    puts("Game is starting. Player X make your move!")
+    puts("Game is starting.\n ")
   end
 
   def play()
@@ -29,6 +29,17 @@ class Game
       puts "\e[32m#{@players[(@moves % 2)-1].sign} won! Congratulations!!\e[0m"
     else
       puts "It's a tie!"
+    end
+  end
+
+  def play_again?()
+    puts("Do you want to play again? [y/N]")
+    input = gets.chomp
+    if input[0].is_a?(String) and input[0].capitalize == "Y"
+      return true
+    else
+      puts("Thanks for playing")
+      return false
     end
   end
 end

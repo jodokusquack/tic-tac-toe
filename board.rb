@@ -1,5 +1,5 @@
 #/!/usr/bin/env ruby
-test
+
 class Board
 
   attr_accessor :cells
@@ -13,6 +13,9 @@ class Board
   end
 
   def draw()
+    # clear the screen before each drawing step
+    system "clear"
+
     cells.each do |row|
       row.each do |cell|
         cell.draw()
