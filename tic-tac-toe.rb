@@ -7,6 +7,7 @@ while play_again
   begin
     system "clear"
     game = Game.new
+    game.setup_game
     game.play()
     play_again = game.play_again?
   rescue Interrupt

@@ -24,6 +24,4 @@ class Cell
       return false
     end
   end
-  
-
 end

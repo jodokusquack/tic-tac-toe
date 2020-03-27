@@ -9,7 +9,7 @@ class Board
       [Cell.new(" "),Cell.new(" "),Cell.new(" ")],
       [Cell.new(" "),Cell.new(" "),Cell.new(" ")],
       [Cell.new(" "),Cell.new(" "),Cell.new(" ")] 
-    ]  
+    ]
   end
 
   # draw() draws the board in its current state

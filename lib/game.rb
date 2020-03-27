@@ -1,12 +1,15 @@
 #/!/usr/bin/env ruby
 
 class Game
-  def initialize()
-    @winner = false
-    @moves = 0
-    @board = Board.new
-    @board.draw()
-    @players = [Player.new("X"), Player.new("O")]
+
+  attr_accessor :winner, :moves, :board, :players
+
+  def setup_game(winner: nil, moves: nil, board: nil, players: nil)
+    @winner = winner || false
+    @moves = moves || 0
+    @board = board || Board.new
+    @board.draw
+    @players = players || [Player.new("X"), Player.new("O")]
     puts("A new game has started.\n ")
   end
 

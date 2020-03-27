@@ -11,7 +11,7 @@ class Player
       puts("Player #{@sign}, where do you want to make your move? [row:col]")
       input = gets.chomp()
       if input[0].capitalize == "Q"
-        abort("You quit the program") 
+        abort("You quit the program")
       end
       if input.length != 3
         raise ArgumentError, "\e[31mPlease type in the format #:#.\n"\
