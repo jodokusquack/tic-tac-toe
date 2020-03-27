@@ -1,9 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative "game.rb"
-require_relative "board.rb"
-require_relative "cell.rb"
-require_relative "player.rb"
+Dir["lib/*.rb"].each { |file| require_relative file }
 
 play_again = true
 while play_again
